@@ -7,6 +7,7 @@ public class CustomLinkedList {
     // Method for inserting a new node
     public void insert(int data) {
         Node newNode = new Node(data);
+        // If list is empty, set new node as head
         if (head == null) {
             head = newNode;
             return;
@@ -42,11 +43,12 @@ public class CustomLinkedList {
         }
     }
 
-    // Iterator method
+    // Iterator method to allow traversal
     public Iterator<Integer> iterator() {
         return new LinkedListIterator();
     }
 
+    // Building block for LinkedList
     private class Node {
         int data;
         Node next;
@@ -57,14 +59,17 @@ public class CustomLinkedList {
         }
     }
 
+    // Enables external iteration using jav's iterator interface
     private class LinkedListIterator implements Iterator<Integer> {
         private Node current = head;
 
+        // Returns True if current node isn't null
         @Override
         public boolean hasNext() {
             return current != null;
         }
 
+        // Returns current node's data
         @Override
         public Integer next() {
             if (!hasNext()) {

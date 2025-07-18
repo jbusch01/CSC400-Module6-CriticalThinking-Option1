@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         CustomLinkedList linkedList = new CustomLinkedList();
 
-        // Read integers from a file
+        // Read integers from a input.txt
         try (Scanner scanner = new Scanner(new File("input.txt"))) {
             while (scanner.hasNextLine()) {
                 int number = scanner.nextInt();
@@ -35,6 +35,7 @@ public class Main {
 
     }
 
+    // Prints each element via the iterator
     public static void printList(CustomLinkedList list) {
         Iterator<Integer> iterator = list.iterator();
         while (iterator.hasNext()) {
