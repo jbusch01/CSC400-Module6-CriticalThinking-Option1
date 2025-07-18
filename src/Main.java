@@ -9,7 +9,7 @@ public class Main {
         CustomLinkedList linkedList = new CustomLinkedList();
 
         // Read integers from a file
-        try (Scanner scanner = new Scanner(new File("inpuit.txt"))) {
+        try (Scanner scanner = new Scanner(new File("input.txt"))) {
             while (scanner.hasNextLine()) {
                 int number = scanner.nextInt();
                 linkedList.insert(number);

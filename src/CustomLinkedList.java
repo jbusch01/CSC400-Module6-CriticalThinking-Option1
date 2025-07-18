@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class CustomLinkedList {
     private Node head;
 
+    // Method for inserting a new node
     public void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -22,6 +23,7 @@ public class CustomLinkedList {
         temp.next = newNode;
     }
 
+    // Method for deleting a node
     public void delete(int data) {
         if (head == null) return;
 
@@ -43,6 +45,7 @@ public class CustomLinkedList {
         }
     }
 
+    // Iterator method
     public Iterator<Integer> iterator() {
         return new LinkedListIterator();
     }
