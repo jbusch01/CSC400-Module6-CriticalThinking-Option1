@@ -1,0 +1,46 @@
+Class CustomLinkedList
+    - head: Node
+
+    Method insert(data)
+        Create new node with data
+        If head is null
+            Set head to new node
+        Else
+            Set temp to head
+            while temp.next is not null
+                Move temp to temp.next
+            Set temp.next to new node
+
+    Method delete(data)
+        If head is null
+            Return
+        If head.data equals data
+            Set head to head.data
+            Return
+        Set prev to head
+        Set current to head.next
+        While current is not null
+            If current.data equals data
+                Set prev.next to current.next
+                Return
+            Move prev to curent
+            Move current to current.next
+
+    Method iterator()
+        Return new LinkedListIterator
+
+    Inner Class Node
+        - data: int
+        - next: Node
+
+    Inner Class LinkedListIterator implements iterator
+        - current: Node (starts at head)
+
+        Method hasNext()
+            Return current is not null
+
+        Method next()
+            If !hasNext, throw exception
+            Store current.data in temp
+            Move current to current.next
+            Return temp
